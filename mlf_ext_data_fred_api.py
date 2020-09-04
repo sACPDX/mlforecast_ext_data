@@ -15,6 +15,8 @@ import psycopg2
 import sqlalchemy
 from sqlalchemy import create_engine
 
+DATABASE_URL = os.environ['DATABASE_URL']
+
 #from PIL import Image
 #image = Image.open('mlf_pic_st_pete_port_cranes.jpg')
 #st.image(image, caption='Skiing Timberline',
@@ -56,26 +58,12 @@ st.subheader("RUNNING PROGRAM:  mfl_ext_data_fred_api.py")
 API_KEY_FED = '50fd3ebc3029aaa14a6b183e2d84f288'
 data = dpf.data("50fd3ebc3029aaa14a6b183e2d84f288")
 
-data.series('gdp')
-data_gdp = data
+data_gdp = data.series('gdp')
+#data_gdp = data
 
-#DATABASE_URL = os.environ['DATABASE_URL']
-#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-#
-# Get GDP data from FRED
-#data_gdp = dpf('gdp') 
 print(data_gdp)
 st.write("data_gdp retrieved from Fred:", data_gdp)
 
-#print(dpf)         #suggests to run data = dpf.data()
-# Write to GitHub
-#data_gdp.to_csv("https://github.com/sACPDX/mlforecast_ext_data/mlf_GDP.csv")
-
-#dpf('gdp')
-#data = dpf.data()
-#data('gdp')
-
-#st.write(data)
 
 # Load data to table
 create_GDP_data_table(data_gdp)
