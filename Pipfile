@@ -8,6 +8,10 @@ verify_ssl = true
 [packages]
 datapungi-fed = "*"
 streamlit = "*"
+psycopg2 = "*"
+psycopg2-binary = "*"
+sqlalchemy = "*"
+pandas = "*"
 
 [requires]
 python_version = "3.8"
