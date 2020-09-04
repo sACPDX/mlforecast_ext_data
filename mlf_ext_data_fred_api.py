@@ -37,7 +37,8 @@ def create_GDP_data_table(data_gdp):
     try:
         data_gdp.to_sql((mlf_GDP), con=engine, if_exists='replace')
     except (Exception, psycopg2.DatabaseError) as error:
-        st.write(error)
+        #st.write(error)
+        print(error)
     finally:
         if con is not None:
             con.close()
