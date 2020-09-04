@@ -71,6 +71,12 @@ st.write("data_gdp retrieved from Fred:", data_gdp)
 # Write to GitHub
 #data_gdp.to_csv("https://github.com/sACPDX/mlforecast_ext_data/mlf_GDP.csv")
 
+dfp('gdp')
+data = dpf.data()
+data('gdp')
+
+
+
 # Load data to table
 create_GDP_data_table(data_gdp)
 
