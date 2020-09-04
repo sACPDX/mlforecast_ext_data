@@ -37,7 +37,7 @@ def create_GDP_data_table(data_gdp):
     try:
         data_gdp.to_sql((mlf_GDP), con=engine, if_exists='replace')
     except (Exception, psycopg2.DatabaseError) as error:
-        #st.write(error)
+        st.write(error)
         print(error)
     finally:
         if con is not None:
@@ -71,11 +71,11 @@ st.write("data_gdp retrieved from Fred:", data_gdp)
 # Write to GitHub
 #data_gdp.to_csv("https://github.com/sACPDX/mlforecast_ext_data/mlf_GDP.csv")
 
-dfp('gdp')
+dpf('gdp')
 data = dpf.data()
 data('gdp')
 
-
+st.write(data)
 
 # Load data to table
 create_GDP_data_table(data_gdp)
