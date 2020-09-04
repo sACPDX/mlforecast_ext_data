@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run mlforecast.py
+web: sh setup.sh && streamlit run mlforecast_ext_fred_api.py

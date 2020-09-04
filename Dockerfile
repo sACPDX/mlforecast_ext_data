@@ -1,6 +1,6 @@
 FROM python:3
 
-WORKDIR /usr/src/mlforecast
+WORKDIR /usr/src/mlf_ext_data_fred_api.py
 
 COPY Pipfile ./
 

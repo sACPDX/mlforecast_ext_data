@@ -1,6 +1,6 @@
 # External Data - FRED API (Fed Data)
 
-#import streamlit as st
+import streamlit as st
 #import streamlit.components.v1 as components                # New 7/27/2020
 
 # Exploratory Data Analysis (EDA) Packages
@@ -50,6 +50,9 @@ def create_GDP_data_table(data_gdp):
 # MAIN Loop
 #
 ##############################################################################################################
+
+st.subheader("RUNNING PROGRAM:  mfl_ext_data_fred_api.py")
+
 
 #DATABASE_URL = os.environ['DATABASE_URL']
 #conn = psycopg2.connect(DATABASE_URL, sslmode='require')
