@@ -1,6 +1,6 @@
 # External Data - FRED API (Fed Data)
 
-#import streamlit as st
+import streamlit as st
 #import streamlit.components.v1 as components                # New 7/27/2020
 
 # Exploratory Data Analysis (EDA) Packages
@@ -51,15 +51,22 @@ def create_GDP_data_table(data_gdp):
 #
 ##############################################################################################################
 
-#st.subheader("RUNNING PROGRAM:  mfl_ext_data_fred_api.py")
+st.subheader("RUNNING PROGRAM:  mfl_ext_data_fred_api.py")
 
+API_KEY_FED = '50fd3ebc3029aaa14a6b183e2d84f288'
+data = dpf.data("50fd3ebc3029aaa14a6b183e2d84f288")
+
+data.series('gdp')
+data_gdp = data
 
 #DATABASE_URL = os.environ['DATABASE_URL']
 #conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 #
 # Get GDP data from FRED
-data_gdp = dpf('gdp') 
+#data_gdp = dpf('gdp') 
 print(data_gdp)
+st.write("data_gdp retrieved from Fred:", data_gdp)
+
 #print(dpf)         #suggests to run data = dpf.data()
 # Write to GitHub
 #data_gdp.to_csv("https://github.com/sACPDX/mlforecast_ext_data/mlf_GDP.csv")
