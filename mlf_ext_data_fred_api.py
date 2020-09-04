@@ -51,6 +51,7 @@ API_KEY_FED = '50fd3ebc3029aaa14a6b183e2d84f288'
 data = dpf.data("50fd3ebc3029aaa14a6b183e2d84f288")
 
 data_gdp = data.series('gdp')
+data_gdp.index.name = 'date'
 st.write("data_gdp retrieved from Fred:", data_gdp)
 
 # Load data to table
