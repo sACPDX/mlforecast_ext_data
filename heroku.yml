@@ -3,3 +3,7 @@ build:
     web: Dockerfile
 run:
   web: sh setup.sh
+API_KEY_FED: 
+    key: 50fd3ebc3029aaa14a6b183e2d84f288
+    description: FED data
+    url: 
