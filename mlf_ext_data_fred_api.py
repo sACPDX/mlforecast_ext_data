@@ -25,7 +25,7 @@ from sqlalchemy import create_engine
 # Function:  Create the PostGres table with GDP data
 def create_GDP_data_table(data_gdp):
     DATABASE_URL = os.environ['DATABASE_URL']
-    st.write("DATABASE_URL",DATABASE_URL)
+    #st.write("DATABASE_URL",DATABASE_URL)
 
 #    conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
@@ -55,9 +55,15 @@ API_KEY_FED = '50fd3ebc3029aaa14a6b183e2d84f288'
 data = dpf.data("50fd3ebc3029aaa14a6b183e2d84f288")
 
 # Sample Query of All Database Groups - Default Databases
-data.datasetlist()       
-data.categories(125)   
-data.releases()
+data_list = data.datasetlist()    
+st.write("data_list", data_list)
+
+data_categories = data.categories(125) 
+st.write("data_categories")  
+
+data_releases = data.releases()
+st.write("data_releases", data_releases)
+
 data.series('GDP')
 data.sources('1')   
 data.tags(tag_names='monetary+aggregates;weekly')
@@ -72,6 +78,9 @@ data.geo(series_id='WIPCPI')
 data_gdp = data.series('gdp')
 data_gdp.index.name = 'date'
 st.write("data_gdp retrieved from Fred:", data_gdp)
+
+data_CPIAUCSL = data.series('CPIAUCSL')
+st.write("data_CPIAUCSL", data_CPIAUCSL)
 
 # Load data to table
 create_GDP_data_table(data_gdp)
