@@ -112,6 +112,11 @@ create_Fed_data_table(data_CPIAUCSL, mlf_table_name)
 data_T10YIE = data.series('T10YIE')
 st.write("10-Year Breakeven Inflation Rate (T10YIE)", data_T10YIE)
 
+mlf_table_name = "data_T10YIE"
+
+# Load data to table
+create_Fed_data_table(data_T10YIE, mlf_table_name)
+
 
 ##############################################################################################################
 #
@@ -122,6 +127,10 @@ st.write("10-Year Breakeven Inflation Rate (T10YIE)", data_T10YIE)
 data_UNRATE = data.series('UNRATE')
 st.write("Unemployment Rate - US - UNRATE", data_UNRATE)
 
+mlf_table_name = "data_UNRATE"
+
+# Load data to table
+create_Fed_data_table(data_UNRATE, mlf_table_name)
 
 ##############################################################################################################
 #
@@ -132,6 +141,11 @@ st.write("Unemployment Rate - US - UNRATE", data_UNRATE)
 data_M2 = data.series('M2')
 st.write("M2 Money Supply", data_M2)
 
+mlf_table_name = "data_M2"
+
+# Load data to table
+create_Fed_data_table(data_M2, mlf_table_name)
+
 
 ##############################################################################################################
 #
@@ -141,6 +155,11 @@ st.write("M2 Money Supply", data_M2)
 
 data_DEXUSEU = data.series('DEXUSEU')
 st.write("DEXUSEU - US dollars for Euro - U.S. / Euro Foreign Exchange Rate", data_DEXUSEU)
+
+mlf_table_name = "data_DEXUSEU"
+
+# Load data to table
+create_Fed_data_table(data_DEXUSEU, mlf_table_name)
 
 
 ##############################################################################################################
@@ -157,6 +176,11 @@ st.write("DEXUSEU - US dollars for Euro - U.S. / Euro Foreign Exchange Rate", da
 data_UMCSENT = data.series('UMCSENT')
 st.write("UMCSENT - University of Michigan: Consumer Sentiment", data_UMCSENT)
 
+mlf_table_name = "data_UMCSENT"
+
+# Load data to table
+create_Fed_data_table(data_UMCSENT, mlf_table_name)
+
 
 ##############################################################################################################
 #
@@ -168,6 +192,11 @@ st.write("UMCSENT - University of Michigan: Consumer Sentiment", data_UMCSENT)
 
 data_DGS10 = data.series('DGS10')
 st.write("DGS10 - 10-Year Treasury Constant Maturity Rate", data_DGS10)
+
+mlf_table_name = "data_DGS10"
+
+# Load data to table
+create_Fed_data_table(data_DGS10, mlf_table_name)
 
 
 ##############################################################################################################
@@ -181,6 +210,12 @@ st.write("DGS10 - 10-Year Treasury Constant Maturity Rate", data_DGS10)
 data_SP500 = data.series('SP500')
 st.write("S&P 500 (SP500)", data_SP500)
 
+mlf_table_name = "data_SP500"
+
+# Load data to table
+create_Fed_data_table(data_SP500, mlf_table_name)
+
+
 ##############################################################################################################
 #
 # Median Sales Price of Houses Sold for the United States (MSPUS)
@@ -191,6 +226,11 @@ st.write("S&P 500 (SP500)", data_SP500)
 
 data_MSPUS = data.series('MSPUS')
 st.write("Median Sales Price of Houses Sold for the United States (MSPUS)", data_MSPUS)
+
+mlf_table_name = "data_MSPUS"
+
+# Load data to table
+create_Fed_data_table(data_MSPUS, mlf_table_name)
 
 
 ##############################################################################################################
@@ -204,6 +244,11 @@ st.write("Median Sales Price of Houses Sold for the United States (MSPUS)", data
 
 data_GOLDAMGBD228NLBM = data.series('GOLDAMGBD228NLBM')
 st.write("Gold Fixing Price 10:30 A.M. (London time) in London Bullion Market, based in U.S. Dollars (GOLDAMGBD228NLBM)", data_GOLDAMGBD228NLBM)
+
+mlf_table_name = "data_GOLDAMGBD228NLBM"
+
+# Load data to table
+create_Fed_data_table(data_GOLDAMGBD228NLBM, mlf_table_name)
 
 
 # End
