@@ -23,7 +23,7 @@ from sqlalchemy import create_engine
 #conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # Function:  Create the PostGres table with GDP data
-def create_Fed_data_table(data_gdp, mlf_table_name):
+def create_Fed_data_table(data_table, mlf_table_name):
 #def create_GDP_data_table(data_gdp):
     DATABASE_URL = os.environ['DATABASE_URL']
     #st.write("DATABASE_URL",DATABASE_URL)
@@ -36,7 +36,7 @@ def create_Fed_data_table(data_gdp, mlf_table_name):
     #mlf_table_name = "mlf_GDP"
     
     try:
-        data_gdp.to_sql(mlf_table_name, con=engine, if_exists='replace')
+        data_table.to_sql(mlf_table_name, con=engine, if_exists='replace')
     except (Exception, psycopg2.DatabaseError) as error:
         st.write(error)
     finally:
@@ -98,7 +98,7 @@ st.write("CPI - CPIAUCSL", data_CPIAUCSL)
 mlf_table_name = "mlf_CPIAUCSL"
 
 # Load data to table
-create_Fed_data_table(data_gdp, mlf_table_name)
+create_Fed_data_table(data_CPIAUCSL, mlf_table_name)
 
 
 ##############################################################################################################
