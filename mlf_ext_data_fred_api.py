@@ -94,6 +94,18 @@ st.write("data_CPIAUCSL", data_CPIAUCSL)
 
 ##############################################################################################################
 #
+# T10YIE - 10-Year Breakeven Inflation Rate (T10YIE)
+# Suggested Citation:
+#   Federal Reserve Bank of St. Louis, 10-Year Breakeven Inflation Rate [T10YIE], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/T10YIE, September 4, 2020.
+#
+##############################################################################################################
+
+data_T10YIE = data.series('T10YIE')
+st.write("10-Year Breakeven Inflation Rate (T10YIE)", data_T10YIE)
+
+
+##############################################################################################################
+#
 # Unemployment Rate - US
 #
 ##############################################################################################################
@@ -111,6 +123,7 @@ st.write("data_UNRATE", data_UNRATE)
 data_M2 = data.series('M2')
 st.write("data_M2", data_M2)
 
+
 ##############################################################################################################
 #
 # DEXUSEU - US dollars for Euro - U.S. / Euro Foreign Exchange Rate
@@ -120,15 +133,68 @@ st.write("data_M2", data_M2)
 data_DEXUSEU = data.series('DEXUSEU')
 st.write("data_DEXUSEU", data_DEXUSEU)
 
+
 ##############################################################################################################
 #
 # UMCSENT - University of Michigan: Consumer Sentiment
+# 
+# This data should be cited as follows: "Surveys of Consumers, University of Michigan, University of Michigan: Consumer Sentiment © [UMCSENT], retrieved from FRED, Federal Reserve Bank of St. Louis, (Accessed on date)"
+# Copyright, 2016, Surveys of Consumers, University of Michigan. Reprinted with permission.
 #
+# Suggested Citation:
+# University of Michigan, University of Michigan: Consumer Sentiment [UMCSENT], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/UMCSENT, September 4, 2020.
 ##############################################################################################################
 
 data_UMCSENT = data.series('UMCSENT')
 st.write("data_UMCSENT", data_UMCSENT)
 
+
+##############################################################################################################
+#
+# DGS10 - 10-Year Treasury Constant Maturity Rate
+# Suggested Citation:
+#   Board of Governors of the Federal Reserve System (US), 10-Year Treasury Constant Maturity Rate [DGS10], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/DGS10, September 4, 2020.
+#
+##############################################################################################################
+
+data_DGS10 = data.series('DGS10')
+st.write("data_DGS10", data_DGS10)
+
+
+##############################################################################################################
+#
+# S&P 500 (SP500)
+# Suggested Citation:
+#   S&P Dow Jones Indices LLC, S&P 500 [SP500], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/SP500, September 4, 2020.
+#
+##############################################################################################################
+
+data_SP500 = data.series('SP500')
+st.write("S&P 500 (SP500)", data_SP500)
+
+##############################################################################################################
+#
+# Median Sales Price of Houses Sold for the United States (MSPUS)
+# Suggested Citation:
+#   U.S. Census Bureau and U.S. Department of Housing and Urban Development, Median Sales Price of Houses Sold for the United States [MSPUS], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/MSPUS, September 4, 2020.
+#
+##############################################################################################################
+
+data_MSPUS = data.series('MSPUS')
+st.write("Median Sales Price of Houses Sold for the United States (MSPUS)", data_MSPUS)
+
+
+##############################################################################################################
+#
+# Gold Fixing Price 10:30 A.M. (London time) in London Bullion Market, based in U.S. Dollars (GOLDAMGBD228NLBM)
+#
+# Suggested Citation:
+#   ICE Benchmark Administration Limited (IBA), Gold Fixing Price 10:30 A.M. (London time) in London Bullion Market, based in U.S. Dollars [GOLDAMGBD228NLBM], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GOLDAMGBD228NLBM, September 4, 2020.#
+#
+##############################################################################################################
+
+data_GOLDAMGBD228NLBM = data.series('GOLDAMGBD228NLBM')
+st.write("Gold Fixing Price 10:30 A.M. (London time) in London Bullion Market, based in U.S. Dollars (GOLDAMGBD228NLBM)", data_GOLDAMGBD228NLBM)
 
 
 # End
