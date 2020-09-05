@@ -23,7 +23,8 @@ from sqlalchemy import create_engine
 #conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # Function:  Create the PostGres table with GDP data
-def create_GDP_data_table(data_gdp):
+def create_Fed_data_table(data_gdp, mlf_table_name):
+#def create_GDP_data_table(data_gdp):
     DATABASE_URL = os.environ['DATABASE_URL']
     #st.write("DATABASE_URL",DATABASE_URL)
 
@@ -32,7 +33,7 @@ def create_GDP_data_table(data_gdp):
     # Format of table is date, gdp
     engine = sqlalchemy.create_engine(os.environ.get("DATABASE_URL"))
     con = engine.connect()
-    mlf_table_name = "mlf_GDP"
+    #mlf_table_name = "mlf_GDP"
     
     try:
         data_gdp.to_sql(mlf_table_name, con=engine, if_exists='replace')
@@ -77,9 +78,12 @@ data.geo(series_id='WIPCPI')
 
 data_gdp = data.series('gdp')
 data_gdp.index.name = 'date'
-st.write("data_gdp retrieved from Fred:", data_gdp)
+st.write("GDP", data_gdp)
+
+mlf_table_name = "mlf_GDP"
+
 # Load data to table
-create_GDP_data_table(data_gdp)
+create_Fed_data_table(data_gdp, mlf_table_name)
 
 
 ##############################################################################################################
@@ -89,7 +93,12 @@ create_GDP_data_table(data_gdp)
 ##############################################################################################################
 
 data_CPIAUCSL = data.series('CPIAUCSL')
-st.write("data_CPIAUCSL", data_CPIAUCSL)
+st.write("CPI - CPIAUCSL", data_CPIAUCSL)
+
+mlf_table_name = "mlf_CPIAUCSL"
+
+# Load data to table
+create_Fed_data_table(data_gdp, mlf_table_name)
 
 
 ##############################################################################################################
@@ -111,7 +120,7 @@ st.write("10-Year Breakeven Inflation Rate (T10YIE)", data_T10YIE)
 ##############################################################################################################
 
 data_UNRATE = data.series('UNRATE')
-st.write("data_UNRATE", data_UNRATE)
+st.write("Unemployment Rate - US - UNRATE", data_UNRATE)
 
 
 ##############################################################################################################
@@ -121,7 +130,7 @@ st.write("data_UNRATE", data_UNRATE)
 ##############################################################################################################
 
 data_M2 = data.series('M2')
-st.write("data_M2", data_M2)
+st.write("M2 Money Supply", data_M2)
 
 
 ##############################################################################################################
@@ -131,7 +140,7 @@ st.write("data_M2", data_M2)
 ##############################################################################################################
 
 data_DEXUSEU = data.series('DEXUSEU')
-st.write("data_DEXUSEU", data_DEXUSEU)
+st.write("DEXUSEU - US dollars for Euro - U.S. / Euro Foreign Exchange Rate", data_DEXUSEU)
 
 
 ##############################################################################################################
@@ -146,7 +155,7 @@ st.write("data_DEXUSEU", data_DEXUSEU)
 ##############################################################################################################
 
 data_UMCSENT = data.series('UMCSENT')
-st.write("data_UMCSENT", data_UMCSENT)
+st.write("UMCSENT - University of Michigan: Consumer Sentiment", data_UMCSENT)
 
 
 ##############################################################################################################
@@ -158,7 +167,7 @@ st.write("data_UMCSENT", data_UMCSENT)
 ##############################################################################################################
 
 data_DGS10 = data.series('DGS10')
-st.write("data_DGS10", data_DGS10)
+st.write("DGS10 - 10-Year Treasury Constant Maturity Rate", data_DGS10)
 
 
 ##############################################################################################################
