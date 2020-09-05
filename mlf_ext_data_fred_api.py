@@ -7,6 +7,10 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+
+# API Library for Fed Data
+# https://github.com/jjotterson/datapungi_fed/blob/master/README.md
+
 import datapungi_fed as dpf
 
 #  Database on Heroku:  Created postgresql-tapered-56936 as DATABASE_URL
@@ -49,6 +53,21 @@ st.subheader("RUNNING PROGRAM:  mfl_ext_data_fred_api.py")
 
 API_KEY_FED = '50fd3ebc3029aaa14a6b183e2d84f288'
 data = dpf.data("50fd3ebc3029aaa14a6b183e2d84f288")
+
+# Sample Query of All Database Groups - Default Databases
+data.datasetlist()       
+data.categories(125)   
+data.releases()
+data.series('GDP')
+data.sources('1')   
+data.tags(tag_names='monetary+aggregates;weekly')
+data.geo(series_id='WIPCPI')
+
+##############################################################################################################
+#
+# GDP
+#
+##############################################################################################################
 
 data_gdp = data.series('gdp')
 data_gdp.index.name = 'date'
